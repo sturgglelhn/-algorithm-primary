@@ -17,10 +17,10 @@ public class Code01_Swap {
     }
 }
 
-
 class Solution {
     public String replaceSpace(String s) {
         StringBuilder res = new StringBuilder();
+		// toCharArray()将字符串转化为字符数组
         for(Character c : s.toCharArray()){
             if(c == ' '){
                 res.append("%20");
