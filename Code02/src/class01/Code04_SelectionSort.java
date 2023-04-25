@@ -92,9 +92,9 @@ public class Code04_SelectionSort {
     // for test
     public static void main(String[] args) {
         int testTime = 5000;
-        int maxSize = 10;
+        int maxSize = 15;
         int maxValue = 100;
-        boolean succeed = true;
+        //boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);
             //int[] arr2 = copyArray(arr1);
