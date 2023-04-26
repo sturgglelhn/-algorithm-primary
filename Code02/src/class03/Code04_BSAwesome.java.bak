@@ -5,7 +5,7 @@ package class03;
  * @date: 2023/4/26 16:37
  * @ClassName: Code04_BSAwesome
  * <p>
- * 题目：局部最小值 还没有实现
+ * 题目：局部最小值
  */
 public class Code04_BSAwesome {
     // arr 整体无序
