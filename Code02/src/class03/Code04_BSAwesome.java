@@ -26,7 +26,8 @@ public class Code04_BSAwesome {
         }
         int L = 0;
         int R = N - 1;
-        while (L < R -1) {
+        // L...R 肯定有局部最小
+        while (L < R - 1) {
             int mid = (L + R) / 2;
             if (arr[mid] < arr[mid - 1] && arr[mid] < arr[mid + 1]) {
                 return mid;
@@ -43,21 +44,21 @@ public class Code04_BSAwesome {
 
     // 生成随机数组，且相邻数组不相等
     public static int[] randomArray(int maxLen, int maxValue) {
-        int len = (int) (Math.random() * maxLen);
+        int len = (int)(Math.random() * maxLen);
         int[] arr = new int[len];
-        if (len > 0) {
-            arr[0] = (int) (Math.random() * maxValue);
-            for (int i = 0; i < len; i++) {
-                do {
-                    arr[i] = (int) (Math.random() * maxValue);
-                } while (arr[i] == arr[i - 1]);
+        if(len > 0){
+            arr[0] = (int)(Math.random() * maxValue);
+            for(int i = 1; i < len; i++){
+                do{
+                    arr[i] = (int)(Math.random() * maxValue);
+                }while (arr[i] == arr[i - 1]);
             }
         }
         return arr;
     }
 
     public static boolean check(int[] arr, int minIndex) {
-        if (arr.length == 0) {
+        if(arr.length == 0){
             return minIndex == -1;
         }
         int left = minIndex - 1;
@@ -74,10 +75,11 @@ public class Code04_BSAwesome {
         System.out.println();
     }
 
-    public static void main(String[] args) {
-        int testTime = 10000;
-        int maxLen = 5;
-        int maxValue = 20;
+    public static void main(String[] args){
+        int maxLen = 100;
+        int maxValue = 200;
+        int testTime = 100000;
+        System.out.println("测试开始");
         for(int i = 0; i < testTime; i++){
             int[] arr = randomArray(maxLen, maxValue);
             int ans = oneMinIndex(arr);
