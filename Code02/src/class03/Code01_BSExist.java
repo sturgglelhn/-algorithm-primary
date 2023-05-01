@@ -10,9 +10,31 @@ import java.util.Arrays;
  * 题目：有序数组中找到num
  */
 public class Code01_BSExist {
+    public static int binarySearch(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1,3,5,7,9};
+        int target1 = 9;
+        int result = binarySearch(arr,target1);
+        System.out.println(result);
+    }
 
     // 二分查找
-    public static boolean find(int[] arr, int num) {
+    /*public static boolean find(int[] arr, int num) {
         if (arr == null || arr.length == 0) {
             return false;
         }
@@ -30,9 +52,9 @@ public class Code01_BSExist {
             }
         }
         return false;
-    }
+    }*/
 
-    public static boolean test(int[] sortedAdd, int num){
+    /*public static boolean test(int[] sortedAdd, int num){
         for(int cur : sortedAdd){
             if(cur == num){
                 return true;
@@ -64,8 +86,6 @@ public class Code01_BSExist {
                 break;
             }
         }
-
         System.out.println(succeed ? "Nick" : "Fucking fucked");
-
-    }
+    }*/
 }
